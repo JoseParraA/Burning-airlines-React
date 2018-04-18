@@ -4,6 +4,12 @@ import Flights from './Flights';
 import Reservations from './Reservations';
 
 class App extends Component {
+  constructor(props) {
+  super(props);
+  this.state = {
+    name: props.location.pathname.substring(1)
+  }
+}
   render() {
     return (
       <div className="App">
