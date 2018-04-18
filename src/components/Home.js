@@ -43,12 +43,12 @@ e.preventDefault();
 
     if (this.state.name === "Sam")
     {
-      window.location.href = `${ghUrl}/#/sam`;
+      window.location.href = `${ghUrl}`;
     }
 
     if (this.state.name === "admin")
     {
-      window.location.href = `${ghUrl}/#/admin`;
+      window.location.href = `${ghUrl}`;
     }
   //   else {
   // // window.location.href = ghUrl;
