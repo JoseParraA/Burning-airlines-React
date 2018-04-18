@@ -65,7 +65,7 @@ function ShowFlights(props) {
   return (
     <div>
         { props.flights.map( f =>
-            <p key={f.id}>{f.origin} to {f.destination} on {f.date}: Flight&nbsp;{f.id}
+            <p key={f.id}>{f.origin} to {f.destination} on {f.date}
           <button className="res-button book" onClick = { () => { this._handleClick(f.id) } }>
             Book Flight
           </button></p>
