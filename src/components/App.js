@@ -15,7 +15,7 @@ class App extends Component {
     return (
       <div className="App">
         <Home />
-        <Flights />
+        <Flights user_id={this.props.user_id} username={this.state.name} />
         <Reservations />
       </div>
     );
