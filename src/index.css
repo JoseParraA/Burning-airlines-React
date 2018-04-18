@@ -3,3 +3,46 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+.seat {
+  background-color: cornflowerblue;
+  width: 50px;
+  height: 50px;
+  margin: 5px;
+  display: inline-block;
+}
+
+.taken {
+  background-color: #e03844;
+}
+
+.res-button {
+  margin: 15px 0 0 0;
+  padding: 15px;
+  font-family: Futura, sans-serif;
+  text-transform: uppercase;
+}
+
+.row-num {
+  display: inline-block;
+  width: 15px;
+  height: 50px;
+  line-height: 50px;
+  vertical-align: top;
+}
+
+.res-status {
+  padding: 15px 0;
+  color: cornflowerblue;
+}
+
+.selected {
+  background-color: cornsilk;
+  width: 50px;
+  height: 50px;
+  z-index: 10;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: 2px cornflowerblue solid;
+}
