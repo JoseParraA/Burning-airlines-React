@@ -61,30 +61,36 @@ SearchForm.propTypes = {
   onSubmit: PropTypes.func.isRequired
 };
 
-function Results(props) {
+function ShowFlights(props) {
   return (
     <div>
-    <ul>
-      { props.flights.map( f => <li key={f.id}>{f.origin} to {f.destination} on {f.date}</li>)}
-      </ul>
+        { props.flights.map( f =>
+            <p key={f.id}>{f.origin} to {f.destination} on {f.date}: Flight&nbsp;{f.id}
+          <button className="res-button book" onClick = { () => { this._handleClick(f.id) } }>
+            Book Flight
+          </button></p>
+        )}
     </div>
   );
 }
-
 
 class Flights extends Component {
   constructor(props) {
     super(props);
     this.state = { flights: [] };
-    this.saveSearch = this.saveSearch.bind(this);
+    this.searchFlights = this.searchFlights.bind(this);
+
+    const fetchFlights = () => { // Fat arrow functions do not break the connection to this
+      axios.get(SERVER_URL).then( results => this.setState( { flights: results.data } ) );
+      setTimeout(fetchFlights, 4000); // Recursion
+      console.log(this.state.flights);
+    }
+    fetchFlights();
   }
 
 
-  saveSearch(f) {
+  searchFlights(f) {
     console.log("saved search");
-    axios.post(SERVER_URL, { origin: f }).then( (results) => {
-      this.setState( { flights: [results.data, ...this.state.secrets] } ); // Spread operator
-    });
   }
 
   render() {
@@ -95,7 +101,8 @@ class Flights extends Component {
         <Link to="/Reservations">Choose Seating</Link>
         <h1>Burning Airlines</h1>
         <h2>Search Flights</h2>
-        <SearchForm  onSubmit={ this.saveSearch }/>
+        <SearchForm  onSubmit={ this.searchFlights }/>
+        <ShowFlights  flights={ this.state.flights }/>
       </div>
     )
   }
