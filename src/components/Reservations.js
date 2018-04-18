@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React, { PureComponent as Component } from 'react';
 import Home from './Home';
 import Flights from './Flights';
 
-class Reservations extends React.Component {
+class Reservations extends Component {
 
   constructor() {
     super();
@@ -25,12 +25,12 @@ class Reservations extends React.Component {
     if(this.state.seatReserved.indexOf(seat) > -1 ) {
       this.setState({
         seatAvailable: this.state.seatAvailable.concat(seat),
-        seatReserved: this.state.seatReserved.filter(res => res != seat)
+        seatReserved: this.state.seatReserved.filter(res => res !== seat)
       })
     } else {
       this.setState({
         seatReserved: this.state.seatReserved.concat(seat),
-        seatAvailable: this.state.seatAvailable.filter(res => res != seat)
+        seatAvailable: this.state.seatAvailable.filter(res => res !== seat)
       })
     }
   }
@@ -54,7 +54,7 @@ class DrawGrid extends React.Component {
   render() {
     return (
        <div className="container">
-        <h2></h2>
+        <h2>seating</h2>
         <table className="grid">
           <tbody>
               <tr>
@@ -82,7 +82,7 @@ class AvailableList extends React.Component {
     const seatCount = this.props.available.length;
     return(
       <div className="left">
-        <h4>Available Seats: ({seatCount == 0? 'No seats available' : seatCount})</h4>
+        <h4>Available Seats: ({seatCount === 0? 'No seats available' : seatCount})</h4>
         <ul>
           {this.props.available.map( res => <li key={res} >{res}</li> )}
         </ul>
