@@ -5,12 +5,12 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <h2>This is the homepage</h2>
-        <p>
-          link to <Link to="/Flights">Flights page</Link>
-          link to <Link to="/Reservations">Reservations page</Link>
-          <LogIn />
-        </p>
+        <Link to="/">Log in</Link>
+        <Link to="/Flights">Search Flights</Link>
+        <Link to="/Reservations">Choose Seating</Link>
+        <h1>Burning Airlines</h1>
+
+        <LogIn />
 
       </div>
     )

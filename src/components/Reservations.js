@@ -7,10 +7,12 @@ class Reservations extends Component {
   render() {
     return (
       <div>
-        <h2>This is the Reservations page</h2>
-        <Link to="/">Back to home</Link>
-        <Link to="/Flights">Flights page</Link>
-        <PlaneSeats />
+        <Link to="/">Log in</Link>
+        <Link to="/Flights">Search Flights</Link>
+        <Link to="/Reservations">Choose Seating</Link>
+        <h1>Burning Airlines</h1>
+        <h2>Choose Seating</h2>
+
         <SeatsPlan />
       </div>
     );
