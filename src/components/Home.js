@@ -38,7 +38,8 @@ class LogIn extends Component {
     this.props.onSubmit(this.state.name);
     this.setState({name: ''});
 
-    const ghUrl = "https://burning-airlines-sjt-react.herokuapp.com/#/Flights/"; // changed from localhost:3000
+    // const ghUrl = "https://burning-airlines-sjt-react.herokuapp.com/#/Flights/"; // changed from localhost:3000
+    const ghUrl = "http://localhost:3000/#/Flights/"; // changed from localhost:3000
 
     if (this.state.name === "Sam")
     {

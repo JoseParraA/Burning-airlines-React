@@ -8,14 +8,15 @@ class Reservations extends Component {
     super();
       this.state = {
       seat: [
-        '1A','1B','1C',
-        '2A','2B','2C',
-        '3A','3B','3C',
+        '1A','1B','1C','1D',
+        '2A','2B','2C','2D',
+        '3A','3B','3C','3D'
+
       ],
       seatAvailable: [
         '1A','1B','1C',
         '2A','2B','2C',
-        '3A','3B','3C',
+        '3A','3B','3C'
       ],
       seatReserved: []
     }

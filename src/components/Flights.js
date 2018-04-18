@@ -94,6 +94,13 @@ class Flights extends Component {
     fetchFlights();
   }
 
+  _handleClick(flightId) {
+    const ghUrl = `http://localhost:3000/#/Flights/${flightId}`
+    window.location.href = `${ghUrl}`;
+  }
+
+
+
 
   searchFlights(o, d) {
     axios.get(SERVER_URL).then(function (results){
