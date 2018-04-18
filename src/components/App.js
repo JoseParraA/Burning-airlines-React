@@ -9,13 +9,12 @@ class App extends Component {
   this.state = {
     name: props.location.pathname.substring(1)
   }
-  console.log(this.state.name);
 }
   render() {
     return (
       <div className="App">
         <Home />
-        <Flights />
+        <Flights user_id={this.props.user_id} username={this.state.name} />
         <Reservations />
       </div>
     );
