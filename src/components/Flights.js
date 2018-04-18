@@ -78,6 +78,7 @@ class Flights extends Component {
   constructor(props) {
     super(props);
     this.state = { flights: [] };
+    this.stage = { searchedflights: [] };
     this.searchFlights = this.searchFlights.bind(this);
 
     const fetchFlights = () => { // Fat arrow functions do not break the connection to this
@@ -96,7 +97,6 @@ class Flights extends Component {
   render() {
     return (
       <div>
-        <Link to="/">Log in</Link>
         <Link to="/Flights">Search Flights</Link>
         <Link to="/Reservations">Choose Seating</Link>
         <h1>Burning Airlines</h1>
