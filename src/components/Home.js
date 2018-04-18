@@ -38,17 +38,16 @@ class LogIn extends Component {
     this.props.onSubmit(this.state.name);
     this.setState({name: ''});
 
-    const ghUrl = "https://burning-airlines-sjt-react.herokuapp.com"; // changed from localhost:3000
-e.preventDefault();
+    const ghUrl = "https://burning-airlines-sjt-react.herokuapp.com/#/Flights/"; // changed from localhost:3000
 
     if (this.state.name === "Sam")
     {
-      window.location.href = `${ghUrl}/Flights`;
+      window.location.href = `${ghUrl}`;
     }
 
     if (this.state.name === "admin")
     {
-      window.location.href = `${ghUrl}/Flights`;
+      window.location.href = `${ghUrl}`;
     }
   //   else {
   // // window.location.href = ghUrl;
