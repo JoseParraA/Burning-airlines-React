@@ -1,7 +1,13 @@
 import React, { PureComponent as Component } from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import axios from 'axios';
+const SERVER_URL = 'https://sjt-burning-airlines.herokuapp.com/users.json';
 
 class Home extends Component {
+  handleLogin(name) {
+    console.log('logging in', name)
+  }
   render() {
     return (
       <div>
@@ -9,7 +15,7 @@ class Home extends Component {
         <p>
           link to <Link to="/Flights">Flights page</Link>
           link to <Link to="/Reservations">Reservations page</Link>
-          <LogIn />
+          <LogIn onSubmit={this.handleLogin}/>
         </p>
 
       </div>
@@ -19,22 +25,32 @@ class Home extends Component {
 class LogIn extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      name: ''
-    }
+    this.state = { name: '' }
+    this._handleChange = this._handleChange.bind(this);
+    this._handleSubmit = this._handleSubmit.bind(this);
+  }
+
+  _handleChange(e) {
+    this.setState( { name: e.target.value} );
+  }
+
+  _handleSubmit(e) {
+    e.preventDefault();
+    this.props.onSubmit(this.state.name);
+    this.setState({name: ''});
   }
 
   render() {
     return (
-      <div className="form-signup">
+      <div>
         <h2>Log in</h2>
-        <form>
-          <input type="text" placeholder="Name" name="name" />
+        <form onSubmit={this._handleSubmit}>
+          <input onChange={this._handleChange} value={this.state.name} type="text" placeholder="Name" name="name" />
           <input type="submit" value="Log in"/>
         </form>
       </div>
-    )
-    }
+    );
+  }
 }
 
 export default Home;
