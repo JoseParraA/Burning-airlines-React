@@ -4,50 +4,55 @@ body {
   font-family: sans-serif;
 }
 
-.seat {
-  background-color: cornflowerblue;
-  width: 50px;
-  height: 50px;
-  margin: 5px;
-  display: inline-block;
-}
-
-.taken {
-  background-color: #e03844;
-}
-
-.res-button {
-  margin: 15px 0 0 0;
-  padding: 15px;
-  font-family: Futura, sans-serif;
-  text-transform: uppercase;
-}
-
-.row-num {
-  display: inline-block;
-  width: 15px;
-  height: 50px;
-  line-height: 50px;
-  vertical-align: top;
-}
-
-.res-status {
-  padding: 15px 0;
-  color: cornflowerblue;
-}
-
-.selected {
-  background-color: cornsilk;
-  width: 50px;
-  height: 50px;
-  z-index: 10;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  border: 2px cornflowerblue solid;
-
-}
-
 a {
   margin-right: 1em;
+}
+
+#reservations {
+}
+
+h1 {
+  text-align: center;
+}
+
+.container {
+  width: 600px;
+  margin: auto;
+}
+
+.grid td {
+  width: 80px;
+  height: 50px;
+  padding: 50px 30px;
+  border: 2px solid black;
+  text-align: center;
+  float: left;
+  margin: 5px;
+}
+
+.grid td:hover {
+  opacity: .7;
+  cursor: pointer;
+}
+
+.reserved {
+  background: orange;
+  color: #fff;
+  display: inline-block;
+}
+
+.reserved::after {
+  content: 'RESERVED'
+}
+
+.available::after {
+  content: 'AVAILABLE'
+}
+
+.available {
+  color: #333;
+}
+
+li {
+  list-style: none;
 }
