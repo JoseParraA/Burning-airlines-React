@@ -29,8 +29,9 @@ class SearchForm extends Component {
 
   _handleSubmit(e) {
     e.preventDefault();
-    this.props.onSubmit( this.state.content );
-    this.setState({content: ''});
+    this.props.onSubmit( this.state.origin, this.state.destination );
+    this.setState({origin: ''});
+    this.setState({destination: ''});
   }
 
   render() {
@@ -77,21 +78,42 @@ function ShowFlights(props) {
 class Flights extends Component {
   constructor(props) {
     super(props);
-    this.state = { flights: [] };
-    this.stage = { searchedflights: [] };
+    this.state = { flights: [] ,
+      searchedflights: [],
+      origin: '',
+      destination: ''
+    };
+
     this.searchFlights = this.searchFlights.bind(this);
 
     const fetchFlights = () => { // Fat arrow functions do not break the connection to this
       axios.get(SERVER_URL).then( results => this.setState( { flights: results.data } ) );
-      setTimeout(fetchFlights, 4000); // Recursion
-      console.log(this.state.flights);
+      
+
     }
     fetchFlights();
   }
 
 
-  searchFlights(f) {
-    console.log("saved search");
+  searchFlights(o, d) {
+    axios.get(SERVER_URL).then(function (results){
+      let array_flights = [];
+      for (let i =0;i<results.data.length;i++)
+        if (results.data[i].origin === o && results.data[i].destination === d)
+          array_flights.push(results.data[i]);
+      this.setState({flights : array_flights});
+    }.bind(this));
+
+    return (
+      <div>
+          { this.state.flights.map( f =>
+              <p key={f.id}>{f.origin} to {f.destination} on {f.date}
+            <button className="res-button book" onClick = { () => { this._handleClick(f.id) } }>
+              Book Flight
+            </button></p>
+          )}
+      </div>
+    );
   }
 
   render() {
@@ -101,8 +123,8 @@ class Flights extends Component {
         <Link to="/Reservations">Choose Seating</Link>
         <h1>Burning Airlines</h1>
         <h2>Search Flights</h2>
-        <SearchForm  onSubmit={ this.searchFlights }/>
-        <ShowFlights  flights={ this.state.flights }/>
+        <SearchForm  onSubmit={ this.searchFlights } />
+        <ShowFlights  flights={ this.state.flights } />
       </div>
     )
   }
