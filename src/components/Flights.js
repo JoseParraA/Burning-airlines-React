@@ -7,7 +7,7 @@ class Flights extends Component {
       <div>
         <h2>This is the Flights page</h2>
         <Link to="/">Back to home</Link>
-        <Link to="/Reservations">Reservations pages</Link>
+        <Link to="/Reservations">Reservations page</Link>
       </div>
     )
   }
