@@ -88,7 +88,7 @@ class Flights extends Component {
 
     const fetchFlights = () => { // Fat arrow functions do not break the connection to this
       axios.get(SERVER_URL).then( results => this.setState( { flights: results.data } ) );
-      
+
 
     }
     fetchFlights();
