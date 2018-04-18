@@ -9,6 +9,7 @@ class App extends Component {
   this.state = {
     name: props.location.pathname.substring(1)
   }
+  console.log(this.state.name);
 }
   render() {
     return (

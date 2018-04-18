@@ -8,7 +8,7 @@ import Reservations from './components/Reservations';
 const Routes = (
   <Router>
     <div>
-      <Route exact path="/" component={ Home } />
+      <Route exact path="/" component={ Flights } />
       <Route exact path="/Flights" component={ Flights }/>
       <Route exact path="/Reservations" component={ Reservations }/>
     </div>
