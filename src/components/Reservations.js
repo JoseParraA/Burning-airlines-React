@@ -1,17 +1,21 @@
-class App extends React.Component {
+import React, { Component } from 'react';
+import Home from './Home';
+import Flights from './Flights';
+
+class Reservations extends React.Component {
 
   constructor() {
     super();
       this.state = {
       seat: [
-        '1A','1B','1C','1D',
-        '','Middle2','Middle3',
-        'Back1','Back2','Back3'
+        '1A','1B','1C',
+        '2A','2B','2C',
+        '3A','3B','3C',
       ],
       seatAvailable: [
-        'Front1','Front2','Front3',
-        'Middle1','Middle2','Middle3',
-        'Back1','Back2','Back3'
+        '1A','1B','1C',
+        '2A','2B','2C',
+        '3A','3B','3C',
       ],
       seatReserved: []
     }
@@ -100,5 +104,4 @@ class ReservedList extends React.Component {
   }
 }
 
-
-export deafult Reservations
+export default Reservations
