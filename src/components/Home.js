@@ -39,7 +39,6 @@ class LogIn extends Component {
     this.setState({name: ''});
 
     const ghUrl = "https://burning-airlines-sjt-react.herokuapp.com/Flights"; // changed from localhost:3000
-e.preventDefault();
 
     if (this.state.name === "Sam")
     {
