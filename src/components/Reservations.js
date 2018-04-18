@@ -2,6 +2,7 @@ import React, { PureComponent as Component } from 'react';
 
 
 
+<<<<<<< HEAD
 class Seat extends Component {
   checkIfTaken = () => {
     if ( this.props.takenSeats.indexOf( this.props.seatId ) !== -1 ) { // if this seat is taken
@@ -13,6 +14,21 @@ class Seat extends Component {
         isTaken: false
       });
     }
+=======
+class Reservations extends Component {
+  render() {
+    return (
+      <div>
+        <Link to="/">Log in</Link>
+        <Link to="/Flights">Search Flights</Link>
+        <Link to="/Reservations">Choose Seating</Link>
+        <h1>Burning Airlines</h1>
+        <h2>Choose Seating</h2>
+
+        <SeatsPlan />
+      </div>
+    );
+>>>>>>> f1d68ef81eda3c84c13da0d13bd2c2cae8aec3ef
   }
 
   constructor(props) {

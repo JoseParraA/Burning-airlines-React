@@ -4,6 +4,7 @@ body {
   font-family: sans-serif;
 }
 
+<<<<<<< HEAD
 .seat {
   background-color: cornflowerblue;
   width: 50px;
@@ -45,4 +46,8 @@ body {
   padding: 0;
   box-sizing: border-box;
   border: 2px cornflowerblue solid;
+=======
+a {
+  margin-right: 1em;
+>>>>>>> f1d68ef81eda3c84c13da0d13bd2c2cae8aec3ef
 }
