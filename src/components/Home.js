@@ -10,12 +10,11 @@ class Home extends Component {
   }
   render() {
     return (
-      <div>
+      <div class="nav">
         <Link to="/Flights">Search Flights</Link>
         <Link to="/Reservations">Choose Seating</Link>
         <h1>Burning Airlines</h1>
         <LogIn onSubmit={this.handleLogin}/>
-
       </div>
     )
   }
@@ -58,7 +57,7 @@ class LogIn extends Component {
 
   render() {
     return (
-      <div>
+      <div class='LogIn'>
         <h2>Log in</h2>
         <form onSubmit={this._handleSubmit}>
           <input onChange={this._handleChange} value={this.state.name} type="text" placeholder="Name" name="name" />

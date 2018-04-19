@@ -36,21 +36,23 @@ class SearchForm extends Component {
 
   render() {
     return(
-      <form onSubmit={ this._handleSubmit } >
-        Origin:
+      <form onSubmit={ this._handleSubmit } class="flights">
+        <p>Origin:</p>
         <select value={this.state.value} onChange={this._handleOriginChange}>
           <option value=""></option>
           <option value="Adelaide">Adelaide</option>
           <option value="Brisbane">Brisbane</option>
           <option value="Sydney">Sydney</option>
         </select>
-        Destination:
+        <p>Destination:</p>
         <select value={this.state.value} onChange={this._handleDestinationChange}>
           <option value=""></option>
           <option value="Adelaide">Adelaide</option>
           <option value="Brisbane">Brisbane</option>
           <option value="Sydney">Sydney</option>
         </select>
+        <br></br>
+        <br></br>
         <input type="submit" value="Search Flights" />
       </form>
     );
@@ -88,7 +90,7 @@ class Flights extends Component {
 
     const fetchFlights = () => { // Fat arrow functions do not break the connection to this
       axios.get(SERVER_URL).then( results => this.setState( { flights: results.data } ) );
-      
+
 
     }
     fetchFlights();
@@ -125,7 +127,7 @@ class Flights extends Component {
 
   render() {
     return (
-      <div>
+      <div class="nav-flights">
         <Link to="/Flights">Search Flights</Link>
         <Link to="/Reservations">Choose Seating</Link>
         <h1>Burning Airlines</h1>
