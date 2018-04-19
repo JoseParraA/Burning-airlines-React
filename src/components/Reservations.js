@@ -145,8 +145,8 @@ class BookFlight extends Component {
     return (
 
   <div>
-  <h1>Please call Joel @ Burning Airlines</h1>
-  <h1>on 0403 814 552 to make your booking.</h1>
+  <h1>Please call Burning Airlines</h1>
+  <h1>on 0412 345 678 to make your booking.</h1>
   </div>
     );
   }
