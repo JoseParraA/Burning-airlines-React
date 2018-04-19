@@ -135,10 +135,10 @@ class BookFlight extends Component {
 
   _handleSubmit(e) {
     e.preventDefault();
-    this.props.onSubmit(this.state.name, this.state.flight, this.state.seat);
-    // this.setState({name: ''});
-    // this.setState({flight: ''});
-    // this.setState({seatRese: ''});
+    this.setState({name: ''});
+    this.setState({flight: ''});
+    this.setState({seatRese: ''});
+
   };
 
   render() {
@@ -150,7 +150,7 @@ class BookFlight extends Component {
       Confirm flight number:
       <input onChange={this._handleFlightChange} value={this.state.flight} type="text" placeholder="Flight Number" name="flight_name" />
       Confirm seat number:
-      <input value={this.state.seatReserved} type="text" name="seat" />
+      <input value={this.state.seat} type="text" name="seat" />
       <input type="submit" value="Search Flights" />
     </form>
     );

@@ -125,7 +125,6 @@ class Flights extends Component {
   render() {
     return (
       <div class="nav-flights">
-        <Link to="/Flights">Search Flights</Link>
 
         <h1>Burning Airlines</h1>
         <h2>Search Flights</h2>
