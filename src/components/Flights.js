@@ -67,9 +67,7 @@ function ShowFlights(props) {
     <div>
         { props.flights.map( f =>
             <p key={f.id}>{f.origin} to {f.destination} on {f.date}
-          <button className="res-button book" onClick = { () => { this._handleClick(f.id) } }>
-            Book Flight
-          </button></p>
+          <Link to="/Reservations">Book Flight</Link></p>
         )}
     </div>
   );
@@ -85,6 +83,7 @@ class Flights extends Component {
     };
 
     this.searchFlights = this.searchFlights.bind(this);
+    this._handleClick = this._handleClick.bind(this);
 
     const fetchFlights = () => { // Fat arrow functions do not break the connection to this
       axios.get(SERVER_URL).then( results => this.setState( { flights: results.data } ) );
@@ -94,8 +93,8 @@ class Flights extends Component {
     fetchFlights();
   }
 
-  _handleClick(flightId) {
-    const ghUrl = `http://localhost:3000/#/Flights/${flightId}`
+  _handleClick(e) {
+    const ghUrl = `http://localhost:3000/#/Flights/`
     window.location.href = `${ghUrl}`;
   }
 
@@ -115,9 +114,7 @@ class Flights extends Component {
       <div>
           { this.state.flights.map( f =>
               <p key={f.id}>{f.origin} to {f.destination} on {f.date}
-            <button className="res-button book" onClick = { () => { this._handleClick(f.id) } }>
-              Book Flight
-            </button></p>
+            <Link to="/Reservations">Book Flight</Link></p>
           )}
       </div>
     );
@@ -127,7 +124,7 @@ class Flights extends Component {
     return (
       <div>
         <Link to="/Flights">Search Flights</Link>
-        <Link to="/Reservations">Choose Seating</Link>
+
         <h1>Burning Airlines</h1>
         <h2>Search Flights</h2>
         <SearchForm  onSubmit={ this.searchFlights } />
