@@ -63,7 +63,10 @@ class LogIn extends Component {
           <input onChange={this._handleChange} value={this.state.name} type="text" placeholder="Name" name="name" />
           <input type="submit" value="Log in"/>
         </form>
+        <img src='https://ep00.epimg.net/elpais/imagenes/2015/12/28/paco_nadal/1451287800_145128_1451287800_noticia_normal.jpg'></img>
+
       </div>
+    
     );
   }
 }
