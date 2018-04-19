@@ -2,6 +2,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  background-color: #f4f4f4;
 }
 
 a {
@@ -16,8 +17,12 @@ h1 {
 }
 
 .container {
-  width: 600px;
-  margin: auto;
+  width: 470px;
+  margin: 0 auto;
+}
+
+.grid {
+  margin: auto
 }
 
 .grid td {
@@ -30,13 +35,18 @@ h1 {
   margin: 5px;
 }
 
+tbody {
+margin: 0 auto;
+
+}
+
 .grid td:hover {
   opacity: .7;
   cursor: pointer;
 }
 
 .reserved {
-  background: black;
+  background: #c0b57a;
   color: #fff;
   display: inline-block;
 }
@@ -52,9 +62,18 @@ h1 {
 .available {
   color: #333;
 }
+div.left {
+  width: 200px;
+}
+
+div.right {
+  width: 200px;
+  color: #bd5d4d;
+}
 
 li {
   list-style: none;
+  width: 200px;
 }
 
 .LogIn {
@@ -70,7 +89,8 @@ li {
 .flights {
   text-align:;
   height: 200px;
-  padding-top: 40px;
+  padding: 40px;
+  background-color: #beb47a;
 }
 h2 {
   text-align: center;

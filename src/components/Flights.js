@@ -37,14 +37,14 @@ class SearchForm extends Component {
   render() {
     return(
       <form onSubmit={ this._handleSubmit } class="flights">
-        <p>Origin:</p>
+        <p>Origin</p>
         <select value={this.state.value} onChange={this._handleOriginChange}>
           <option value=""></option>
           <option value="Adelaide">Adelaide</option>
           <option value="Brisbane">Brisbane</option>
           <option value="Sydney">Sydney</option>
         </select>
-        <p>Destination:</p>
+        <p>Destination</p>
         <select value={this.state.value} onChange={this._handleDestinationChange}>
           <option value=""></option>
           <option value="Adelaide">Adelaide</option>
