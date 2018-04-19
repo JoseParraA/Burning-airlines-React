@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 
-const SERVER_URL = 'https://sjt-burning-airlines.herokuapp.com/flights.json';
+const SERVER_URL = 'https://sjt-burning-air.herokuapp.com/flights.json';
 
 
 

@@ -144,15 +144,10 @@ class BookFlight extends Component {
   render() {
     return (
 
-    <form onSubmit={ this._handleSubmit } >
-      Confirm name:
-      <input onChange={this._handleNameChange} value={this.state.name} type="text" placeholder="Name" name="name" />
-      Confirm flight number:
-      <input onChange={this._handleFlightChange} value={this.state.flight} type="text" placeholder="Flight Number" name="flight_name" />
-      Confirm seat number:
-      <input value={this.state.seat} type="text" name="seat" />
-      <input type="submit" value="Search Flights" />
-    </form>
+  <div>
+  <h1>Please call Joel @ Burning Airlines</h1>
+  <h1>on 0403 814 552 to make your booking.</h1>
+  </div>
     );
   }
 }
