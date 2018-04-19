@@ -11,8 +11,7 @@ class Home extends Component {
   render() {
     return (
       <div class="nav">
-        <Link to="/Flights">Search Flights</Link>
-        <Link to="/Reservations">Choose Seating</Link>
+
         <h1>Burning Airlines</h1>
         <LogIn onSubmit={this.handleLogin}/>
       </div>
