@@ -46,6 +46,7 @@ class Reservations extends Component {
           reserved = { this.state.seatReserved }
           onClickData = { this.onClickData.bind(this) }
           />
+          <BookFlight />
       </div>
     )
   }
@@ -102,6 +103,57 @@ class ReservedList extends React.Component {
         </ul>
       </div>
     )
+  }
+}
+
+class BookFlight extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: '',
+      flight: '',
+      seat: '',
+      seatReserved: []
+    };
+    this._handleNameChange = this._handleNameChange.bind(this);
+    this._handleFlightChange = this._handleFlightChange.bind(this);
+    this._handleSeatChange = this._handleSeatChange.bind(this);
+    this._handleSubmit = this._handleSubmit.bind(this);
+  }
+
+  _handleNameChange(e) {
+    this.setState( { name: e.target.value} );
+  }
+
+  _handleFlightChange(e) {
+    this.setState( { flight: e.target.value} );
+  }
+
+  _handleSeatChange(e) {
+    this.setState( { seat: e.target.value} );
+  }
+
+  _handleSubmit(e) {
+    e.preventDefault();
+    this.props.onSubmit(this.state.name, this.state.flight, this.state.seat);
+    // this.setState({name: ''});
+    // this.setState({flight: ''});
+    // this.setState({seatRese: ''});
+  };
+
+  render() {
+    return (
+
+    <form onSubmit={ this._handleSubmit } >
+      Confirm name:
+      <input onChange={this._handleNameChange} value={this.state.name} type="text" placeholder="Name" name="name" />
+      Confirm flight number:
+      <input onChange={this._handleFlightChange} value={this.state.flight} type="text" placeholder="Flight Number" name="flight_name" />
+      Confirm seat number:
+      <input value={this.state.seatReserved} type="text" name="seat" />
+      <input type="submit" value="Search Flights" />
+    </form>
+    );
   }
 }
 
